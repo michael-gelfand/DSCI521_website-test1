@@ -1,7 +1,7 @@
 ---
-title: "test2"
+title: "Test"
 author: "Michael Gelfand"
-date: "2024-09-19"
+date: "2024-09-17"
 output: html_document
 ---
 
@@ -15,8 +15,29 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r code chunk title, echo=FALSE, message=FALSE, fig.width=8, fig.height=5}
+x <- rnorm(100)
+
+mean(x, na.rm = FALSE)
+
+hist(x, main = "history of random numbers", col = "skyblue")
+
+message("this is a sample message")
+```
+
+```{r loading cars in csv}
+# cars2 <- read.csv("data/cars.csv")
+```
+I am testing the here package
+
+```{r testing here}
+library(here)
+hello <- here("data/cars.csv")
+
+cars3 <- read.csv(hello)
+```
+```{r}
+getwd()
 ```
 
 ## Including Plots
